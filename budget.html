@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="sub-container">
+          <!-- Budget -->
+          <div class="total-amount-container">
+            <h3>Budget</h3>
+            <p class="hide error" id="budget-error"> Value cannot be empty or negative </p>
+            <input type="number" id="input_budget" placeholder="Enter Total Amount" oninput="set_budget()"/>
+            <div style="display: flex;">
+            <button onclick="set_budget()" class="submit btn1" id="inital_input_button">Set Budget</button>
+            <button onclick="display__()" class="submit btn1">Display</button>
+            </div>
+            <button onclick="clear_budget()" class="submit btn3">Clear Budget</button>
+            <button onclick="clear_All()" class="submit btn3">Clear All Expense</button>
+          </div>
+          <!-- Expenditure -->
+          <div class="user-amount-container">
+            <h3>Expenses</h3>
+            <input type="text" class="product-title" id="title_input" placeholder="Enter Title of Product" />
+            <input type="number" id="price_input" placeholder="Enter Cost of Product"/>
+            <span id="message_" style="display: none;">You cannot spent more</span>
+            <button onclick="add_data()" class="submit btn3" id="check_button">Add Expense </button>
+          </div>
+        </div>
+        <!-- Output -->
+        <div class="output-container flex-space">
+          <div class="box_1">
+            <p>Total Budget</p>
+            <span id="budget_display">0</span>          
+          </div>
+          <div class="box_1 box_2">
+            <p>Total Expenses</p>
+            <span id="expence_display">0</span>
+          </div>
+          <div class="box_1 box_2">
+            <p>Total Balance</p>
+            <span id="balance_display">0</span>
+          </div>
+        </div>
+        <div class="box">
+          <input type="number" id="update_input" placeholder="Enter new budget"/>
+          <button onclick="update_budget()" class="submit btn3">Update Budget</button>
+        </div> 
+      </div>
+      <table border="1" style="display: none;" id="table_">
+        <tr>
+          <th>Name of expense</th>
+          <th>Price</th>
+        </tr>
+        <tbody id="all_data"></tbody>
+      </table>
+    </div>
+    <script src="budget.js"></script>
+</body>
+</html>
